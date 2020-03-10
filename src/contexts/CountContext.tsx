@@ -16,7 +16,7 @@ export const CountContext: React.FC = ({ children }) => {
   );
 };
 
-const isValidContext = (name: string, value: any) => {
+const validContext = (name: string, value: any) => {
   if(value === undefined) {
     throw new Error(`${name} is not initialized`);
   }
@@ -24,17 +24,15 @@ const isValidContext = (name: string, value: any) => {
 }
 
 export const useCountState = () => {
-  const state = isValidContext(
+  return validContext(
     'CountStateContext', 
     useContext(CountStateContext),
   );
-  return state;
 };
 
 export const useCountDispatch = () => {
-  const dispatch = isValidContext(
+  return validContext(
     'CountDispatchContext', 
     useContext(CountDispatchContext),
   );
-  return dispatch;
 };

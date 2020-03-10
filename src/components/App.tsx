@@ -1,9 +1,13 @@
 import React from 'react';
+import { CountContext } from '../contexts/CountContext';
+import { CountText } from './CountText';
+import { CountButton } from './CountButton';
 
 export const App = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <CountContext>
+      <CountText />
+      <CountButton />
+    </CountContext>
   );
 };
